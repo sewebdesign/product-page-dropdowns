@@ -1,4 +1,4 @@
-:root {
+:where(:root) {
   --accordionSpaceAround: 2rem;
   --accordionTitleSpacing: 1rem;
   --accordionLineThickness: 1px;
