@@ -11,7 +11,10 @@ var ProductPageDropdowns = (function() {
   
     const config = {
       closeOnOpen: options.closeOnOpen !== undefined ? parseBoolOption(options.closeOnOpen) : true,
-      firstOpen: options.firstOpen !== undefined ? parseBoolOption(options.firstOpen) : false
+      firstOpen: options.firstOpen !== undefined ? parseBoolOption(options.firstOpen) : false,
+      // New options for custom selectors
+      titleSelector: options.titleSelector || 'span[style*="line-through"] strong em, strong em s',
+      endSelector: options.endSelector || 'span[style*="underline"] strong em, strong em u'
     };
   
     document.addEventListener('DOMContentLoaded', function() {
@@ -25,8 +28,8 @@ var ProductPageDropdowns = (function() {
       let index = 0;
       
       titles.forEach(function(title) {
-        const titleElement = title.querySelector('span[style*="line-through"] strong em, strong em s');
-        const endElement = title.querySelector('span[style*="underline"] strong em, strong em u');
+        const titleElement = title.querySelector(config.titleSelector);
+        const endElement = title.querySelector(config.endSelector);
         
         if(titleElement) {
           // Set up accordion title
@@ -48,8 +51,8 @@ var ProductPageDropdowns = (function() {
           // Collect all content until the next title or end
           let nextSibling = title.nextElementSibling;
           while(nextSibling && 
-                !nextSibling.querySelector('span[style*="line-through"] strong em, strong em s') && 
-                !nextSibling.querySelector('span[style*="underline"] strong em, strong em u')) {
+                !nextSibling.querySelector(config.titleSelector) && 
+                !nextSibling.querySelector(config.endSelector)) {
             const nextElement = nextSibling;
             nextSibling = nextElement.nextElementSibling;
             innerWrapper.appendChild(nextElement);
