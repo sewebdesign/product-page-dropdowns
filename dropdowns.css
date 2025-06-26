@@ -86,6 +86,11 @@
   display: none;
 }
 
+/* Ensure if multiple accordions - accordion content stays display grid */
+#siteWrapper #page :is(.product-description, .ProductItem-details, .product-details) .accordion-content {
+  display: grid !important;
+}
+
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details) .accordion-content {
   display: grid !important;
   grid-template-rows: 0fr;
