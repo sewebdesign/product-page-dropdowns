@@ -1,5 +1,5 @@
 <!-- This Code is Licensed by schwartz-edmisten.com -->
-  var ProductPageDropdowns = (function() {
+ var ProductPageDropdowns = (function() {
     function init(options = {}) {
       const parseBoolOption = (value) => {
         if (value === 'true') return true;
@@ -22,15 +22,19 @@
           containerClass = '.product-details';
         } else if (document.querySelector('.product-description')) {
           containerClass = '.product-description';
+        } else if (document.querySelector('.product-excerpt')) {
+          containerClass = '.product-excerpt';
         }
-
+        
         if(!containerClass || !document.querySelectorAll(containerClass).length) return;
 
         document.querySelectorAll(containerClass).forEach(function(container) {
           const titles = container.querySelectorAll('p');
           let index = 0;
-
+          
           titles.forEach(function(title) {
+            console.log(title);
+            
             const titleElement = title.querySelector(config.titleSelector);
             const endElement = title.querySelector(config.endSelector);
 
@@ -103,6 +107,5 @@
         }
       });
     }
-
     return init;
   })();
