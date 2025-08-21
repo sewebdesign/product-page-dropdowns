@@ -110,3 +110,8 @@
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-content > div > *:last-child {
   padding-bottom: var(--accordionTitleSpacing);
 }
+
+.sqs-product-quick-view-lightbox p strong em s {
+    text-decoration: none;
+    font-style: normal;
+}
