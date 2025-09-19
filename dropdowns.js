@@ -33,8 +33,6 @@
           let index = 0;
           
           titles.forEach(function(title) {
-            console.log(title);
-            
             const titleElement = title.querySelector(config.titleSelector);
             const endElement = title.querySelector(config.endSelector);
 
