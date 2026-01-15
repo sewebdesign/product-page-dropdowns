@@ -28,8 +28,6 @@
       
       if(!containerClass || !document.querySelectorAll(containerClass).length) return;
 
-      console.log('test working');
-
       document.querySelectorAll(containerClass).forEach(function(container) {
         const titles = container.querySelectorAll('p');
         let index = 0;
