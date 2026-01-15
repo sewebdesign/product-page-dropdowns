@@ -9,11 +9,11 @@
   --accordionOpenSpeed: .5s;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) *:has(+ p span[style*="line-through"] strong em, + p strong em s):not(.accordion-title, .accordion-content) {
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) *:has(+ p span[style*="line-through"] strong em, + p strong em s, + p strong em span[style*="line-through"]):not(.accordion-title, .accordion-content) {
   margin-bottom: var(--accordionSpaceAround) !important;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s),
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]),
 #siteWrapper :is(.ProductItem-details, .product-details, .product-excerpt) .accordion-title {
   border-top: var(--accordionLineThickness) solid var(--accordionLineColor);
   margin: 0;
@@ -23,25 +23,25 @@
   position: relative;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s) span,
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s) strong em s,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]) span,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]) strong em s,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title span,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title strong em s {
   text-decoration: none !important;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s) strong,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]) strong,
 #siteWrapper :is(.ProductItem-details, .product-details, .product-excerpt) .accordion-title strong {
   font-weight: var(--accordionFontWeight);
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s) em,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]) em,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title em {
   font-style: normal;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s):after,
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s):before,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]):after,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]):before,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title:after,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title:before {
   content: '';
@@ -54,34 +54,34 @@
   background: var(--accordionIconColor);
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s):before,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]):before,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title:before {
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
   transition: transform .2s;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s).open:before,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]).open:before,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-title.open:before {
   transform: translateY(-50%) rotate(0deg);
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s) ~ *:not(p:has(span[style*="decoration"] strong em, strong em s, strong em u)) {
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="line-through"] strong em, strong em s, strong em span[style*="line-through"]) ~ *:not(p:has(span[style*="decoration"] strong em, strong em s, strong em u, strong em span[style*="decoration"])) {
   display: none;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="underline"] strong em, strong em u) ~ * {
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="underline"] strong em, strong em u, strong em span[style*="underline"]) ~ * {
   display: block !important;
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="underline"] strong em, strong em u),
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="underline"] strong em, strong em u, strong em span[style*="underline"]),
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-end {
   margin-top: 0;
   margin-bottom: var(--accordionSpaceAround);
   border-top: var(--accordionLineThickness) solid var(--accordionLineColor);
 }
 
-#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="underline"] strong em, strong em u) > *:first-child,
+#siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) p:has(span[style*="underline"] strong em, strong em u, strong em span[style*="underline"]) > *:first-child,
 #siteWrapper :is(.product-description, .ProductItem-details, .product-details, .product-excerpt) .accordion-end > *:first-child {
   display: none;
 }

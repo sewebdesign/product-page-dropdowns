@@ -1,4 +1,4 @@
-<!-- This Code is Licensed by schwartz-edmisten.com -->
+// This Code is Licensed by schwartz-edmisten.com
  var ProductPageDropdowns = (function() {
   function init(options = {}) {
     const parseBoolOption = (value) => {
@@ -10,8 +10,8 @@
     const config = {
       closeOnOpen: options.closeOnOpen !== undefined ? parseBoolOption(options.closeOnOpen) : true,
       firstOpen: options.firstOpen !== undefined ? parseBoolOption(options.firstOpen) : false,
-      titleSelector: options.titleSelector || 'span[style*="line-through"] strong em, strong em s',
-      endSelector: options.endSelector || 'span[style*="underline"] strong em, strong em u'
+      titleSelector: options.titleSelector || 'span[style*="line-through"] strong em, strong em span[style*="line-through"], strong em s',
+      endSelector: options.endSelector || 'span[style*="underline"] strong em, strong em span[style*="underline"], strong em u'
     };
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -27,6 +27,8 @@
       }
       
       if(!containerClass || !document.querySelectorAll(containerClass).length) return;
+
+      console.log('test working');
 
       document.querySelectorAll(containerClass).forEach(function(container) {
         const titles = container.querySelectorAll('p');
